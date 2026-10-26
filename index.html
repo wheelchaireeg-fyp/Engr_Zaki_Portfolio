@@ -1,0 +1,1850 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zaki Ur Rehman — Electrical Engineering graduate interested in embedded systems, robotics, artificial intelligence, neural networks and biomedical technology.">
+  <title>Zaki Ur Rehman | Electrical Engineering Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --surface: #0d1b2e;
+      --surface-light: #12243b;
+      --text: #eaf2ff;
+      --muted: #9aabc2;
+      --cyan: #55e6e0;
+      --blue: #5797ff;
+      --purple: #a68cff;
+      --border: rgba(164,190,225,.15);
+      --gradient: linear-gradient(135deg,#55e6e0,#5797ff 55%,#a68cff);
+      --max-width: 1160px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: "Inter",sans-serif;
+      background:
+        radial-gradient(circle at 85% 8%,rgba(87,151,255,.12),transparent 25%),
+        radial-gradient(circle at 8% 35%,rgba(85,230,224,.07),transparent 24%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--max-width),90%);
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--cyan);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--cyan);
+    }
+
+    h1,h2,h3,h4 {
+      font-family: "Space Grotesk",sans-serif;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: clamp(2rem,4vw,3rem);
+      letter-spacing: -1.2px;
+      margin-bottom: 16px;
+    }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .muted,
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .navbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      background: rgba(7,17,31,.88);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-family: "Space Grotesk",sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 21px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: .85rem;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .nav-cta {
+      padding: 9px 14px;
+      border: 1px solid rgba(85,230,224,.45);
+      border-radius: 9px;
+      color: var(--cyan) !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 7px 11px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 135px 0 75px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(85,230,224,.07);
+      border: 1px solid rgba(85,230,224,.2);
+      color: var(--cyan);
+      font-size: .8rem;
+      margin-bottom: 25px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--cyan);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem,5.5vw,5rem);
+      letter-spacing: -2.5px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--cyan);
+      font-weight: 600;
+      margin-bottom: 17px;
+    }
+
+    .hero-description {
+      max-width: 660px;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 19px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: .88rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform .2s,border-color .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: #06121e;
+      background: var(--gradient);
+    }
+
+    .btn-secondary {
+      border-color: var(--border);
+      background: rgba(255,255,255,.025);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--cyan);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .social-links a:hover {
+      color: var(--cyan);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 440px;
+    }
+
+    .orbit {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(85,230,224,.2);
+      border-radius: 50%;
+      animation: rotate 22s linear infinite;
+    }
+
+    .orbit::before,
+    .orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 22px rgba(85,230,224,.7);
+    }
+
+    .orbit::before {
+      width: 11px;
+      height: 11px;
+      top: 35px;
+      left: 60px;
+    }
+
+    .orbit::after {
+      width: 8px;
+      height: 8px;
+      bottom: 45px;
+      right: 40px;
+      background: var(--purple);
+    }
+
+    .orbit-two {
+      width: 280px;
+      height: 280px;
+      border-color: rgba(166,140,255,.22);
+      animation-direction: reverse;
+      animation-duration: 28s;
+    }
+
+    .profile-frame {
+      width: 245px;
+      height: 295px;
+      border-radius: 26px;
+      overflow: hidden;
+      background: linear-gradient(145deg,#132e49,#0b1728);
+      border: 1px solid rgba(85,230,224,.35);
+      box-shadow: 0 25px 80px rgba(0,0,0,.4);
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      gap: 12px;
+    }
+
+    .profile-placeholder strong {
+      font-family: "Space Grotesk",sans-serif;
+      font-size: 3.5rem;
+      color: var(--cyan);
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 3;
+      background: rgba(13,27,46,.96);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.25);
+      font-size: .8rem;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: .9rem;
+    }
+
+    .floating-card span {
+      color: var(--muted);
+    }
+
+    .float-one {
+      top: 60px;
+      right: -5px;
+    }
+
+    .float-two {
+      bottom: 55px;
+      left: -15px;
+    }
+
+    .tech-strip {
+      padding: 23px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.015);
+    }
+
+    .tech-items {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: #aabbd2;
+      font-size: .88rem;
+      font-weight: 600;
+    }
+
+    .tech-items span::before {
+      content: "✦";
+      color: var(--cyan);
+      margin-right: 9px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 15px;
+    }
+
+    .focus-card,
+    .card,
+    .project-card,
+    .timeline-card,
+    .contact-card,
+    .education-card,
+    .skill-group {
+      background: linear-gradient(145deg,rgba(18,36,59,.88),rgba(11,25,42,.88));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: transform .25s,border-color .25s;
+    }
+
+    .focus-card,
+    .card,
+    .skill-group,
+    .education-card {
+      padding: 24px;
+    }
+
+    .focus-card:hover,
+    .card:hover,
+    .project-card:hover,
+    .timeline-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(85,230,224,.38);
+    }
+
+    .icon-box {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(85,230,224,.09);
+      color: var(--cyan);
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .focus-card h3,
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 9px;
+    }
+
+    .focus-card p,
+    .card p {
+      color: var(--muted);
+      font-size: .87rem;
+    }
+
+    .research-section {
+      background: rgba(255,255,255,.018);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid rgba(85,230,224,.18);
+      background: rgba(85,230,224,.055);
+      color: #b6f7f3;
+      border-radius: 7px;
+      padding: 5px 9px;
+      font-size: .75rem;
+    }
+
+    .featured-project {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      overflow: hidden;
+      border: 1px solid rgba(85,230,224,.25);
+      border-radius: 20px;
+      background: linear-gradient(135deg,rgba(16,39,61,.98),rgba(12,24,43,.98));
+      margin-bottom: 28px;
+    }
+
+    .project-art {
+      min-height: 320px;
+      display: grid;
+      place-items: center;
+      padding: 35px;
+      background:
+        radial-gradient(circle at 50% 45%,rgba(85,230,224,.17),transparent 40%),
+        linear-gradient(145deg,#0d253b,#11172d);
+    }
+
+    .brain-diagram {
+      width: 100%;
+      max-width: 340px;
+      text-align: center;
+    }
+
+    .brain-symbol {
+      font-size: 4.5rem;
+      filter: drop-shadow(0 0 18px rgba(85,230,224,.3));
+      margin-bottom: 13px;
+    }
+
+    .signal-line {
+      height: 50px;
+      width: 100%;
+      margin: 12px auto;
+    }
+
+    .signal-line svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .signal-line polyline {
+      fill: none;
+      stroke: var(--cyan);
+      stroke-width: 2.5;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+    .diagram-label {
+      color: var(--muted);
+      font-size: .82rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .project-content {
+      padding: 34px;
+    }
+
+    .project-content h3 {
+      font-size: 1.6rem;
+      margin: 13px 0;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .project-content ul {
+      padding-left: 20px;
+      color: var(--muted);
+      margin: 15px 0;
+    }
+
+    .project-content li {
+      margin-bottom: 8px;
+    }
+
+    .project-details {
+      margin-top: 32px;
+    }
+
+    .project-details h3 {
+      font-size: 1.35rem;
+      margin: 30px 0 12px;
+    }
+
+    .project-details p,
+    .project-details li {
+      color: var(--muted);
+    }
+
+    .project-details ul,
+    .project-details ol {
+      padding-left: 22px;
+    }
+
+    .project-details li {
+      margin-bottom: 9px;
+    }
+
+    .project-meta {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    .meta-card {
+      padding: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.025);
+      border-radius: 12px;
+    }
+
+    .meta-card span {
+      display: block;
+      color: var(--muted);
+      font-size: .77rem;
+      margin-bottom: 5px;
+    }
+
+    .meta-card strong {
+      font-size: .9rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .project-links .btn {
+      font-size: .84rem;
+    }
+
+    .architecture {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .architecture span {
+      padding: 10px 13px;
+      border: 1px solid rgba(85,230,224,.22);
+      background: rgba(85,230,224,.06);
+      border-radius: 9px;
+      font-size: .82rem;
+    }
+
+    .architecture b {
+      color: var(--cyan);
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 14px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 245px;
+      object-fit: cover;
+      transition: transform .35s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-caption {
+      padding: 15px;
+    }
+
+    .gallery-caption strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .gallery-caption p {
+      font-size: .84rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      overflow: hidden;
+    }
+
+    .project-top {
+      height: 145px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 50% 50%,rgba(87,151,255,.17),transparent 55%),
+        #0e1e32;
+      border-bottom: 1px solid var(--border);
+      font-size: 3rem;
+    }
+
+    .project-body {
+      padding: 22px;
+    }
+
+    .project-body h3 {
+      font-size: 1.08rem;
+      margin-bottom: 11px;
+    }
+
+    .project-body p {
+      font-size: .87rem;
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 22px;
+    }
+
+    .timeline-card {
+      padding: 25px 28px;
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 28px;
+    }
+
+    .timeline-date {
+      color: var(--cyan);
+      font-size: .88rem;
+      font-weight: 700;
+    }
+
+    .timeline-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+
+    .timeline-card h4 {
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .timeline-card p,
+    .timeline-card li {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .timeline-card ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .timeline-card li {
+      margin-bottom: 7px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .skill-group h3 {
+      font-size: 1.08rem;
+      margin-bottom: 17px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .skill {
+      padding: 8px 11px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--border);
+      color: #c7d4e6;
+      font-size: .82rem;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .education-card .year {
+      color: var(--cyan);
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    .education-card h3 {
+      margin: 12px 0 7px;
+      font-size: 1.2rem;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .contact-section {
+      background:
+        radial-gradient(circle at 50% 100%,rgba(87,151,255,.12),transparent 50%),
+        rgba(255,255,255,.015);
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .contact-copy p {
+      color: var(--muted);
+      margin-bottom: 23px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .contact-item .icon-box {
+      flex-shrink: 0;
+      margin: 0;
+      width: 42px;
+      height: 42px;
+      font-size: 1rem;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: .9rem;
+      margin-bottom: 3px;
+    }
+
+    .contact-item span,
+    .contact-item a {
+      color: var(--muted);
+      font-size: .87rem;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-card {
+      padding: 30px;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 15px;
+      font-size: 1.35rem;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner p {
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    .back-top {
+      color: var(--cyan);
+      font-size: .88rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease,transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 980px) {
+      .nav-links { gap: 13px; }
+      .nav-links a { font-size: .78rem; }
+      .hero-grid { gap: 35px; }
+      .orbit { width: 300px; height: 300px; }
+      .orbit-two { width: 245px; height: 245px; }
+      .profile-frame { width: 215px; height: 265px; }
+      .research-grid,.skills-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .project-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      .section { padding: 75px 0; }
+
+      .menu-toggle { display: block; }
+
+      .nav-inner { min-height: 68px; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(7,17,31,.98);
+        border-bottom: 1px solid var(--border);
+        padding: 22px 5%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: .95rem; }
+      .nav-cta { text-align: center; }
+
+      .hero { padding-top: 115px; }
+
+      .hero-grid,
+      .about-grid,
+      .featured-project,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid { gap: 20px; }
+      .hero-visual { min-height: 380px; margin-top: 10px; }
+      .hero h1 { font-size: clamp(2.7rem,12vw,4rem); }
+      .float-one { right: 2%; }
+      .float-two { left: 2%; }
+
+      .research-grid,
+      .project-grid,
+      .skills-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-card {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .project-art { min-height: 250px; }
+      .project-content { padding: 25px; }
+      .tech-items { justify-content: flex-start; gap: 15px 25px; }
+    }
+
+    @media (max-width: 480px) {
+      .focus-grid,
+      .project-gallery,
+      .project-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .btn { width: 100%; }
+      .profile-frame { width: 195px; height: 245px; }
+      .orbit { width: 275px; height: 275px; }
+      .orbit-two { width: 225px; height: 225px; }
+      .floating-card { padding: 10px 12px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      *,*::before,*::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#home">Engineer Zaki<span>.</span></a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation menu" aria-expanded="false">☰</button>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a class="nav-cta" href="#contact">Contact ↗</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="status">
+            <span class="status-dot"></span>
+            Electrical Engineering Graduate
+          </div>
+
+          <h1>
+            Zaki Ur Rehman
+            <span class="gradient-text">Engineer. Builder. Researcher.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Embedded Systems · Robotics · Artificial Intelligence
+          </p>
+
+          <p class="hero-description">
+            Electrical Engineering graduate from the International Islamic
+            University Islamabad, interested in intelligent embedded systems, Artificial Intelligence, 
+            robotics, neural networks, and biomedical technology. My goal is
+            to develop engineering solutions that connect electronics,
+            software, and intelligent control, particularly in assistive
+            and rehabilitation technologies.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Explore My Projects ↗</a>
+            <a class="btn btn-secondary" href="#contact">Contact Me</a>
+          </div>
+
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/engr-zaki-ur-rehman"
+               target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="mailto:zakiurrehman.bsee1112@iiu.edu.pk">Email ↗</a>
+            <a href="#research">Research Interests ↓</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="orbit"></div>
+          <div class="orbit orbit-two"></div>
+
+          <div class="profile-frame">
+            <img src="Zaki.jpg" alt="Portrait of Zaki Ur Rehman"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+
+            <div class="profile-placeholder" style="display:none;">
+              <strong>ZR</strong>
+              <span>Add your photo as <b>profile.jpg</b> beside index.html.</span>
+            </div>
+          </div>
+
+          <div class="floating-card float-one">
+            <strong>Research Focus</strong>
+            <span>AI + Embedded Systems <br>& Neural Networks</span>
+          </div>
+
+          <div class="floating-card float-two">
+            <strong>Featured Project</strong>
+            <span>EEG Smart Wheelchair</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="tech-strip">
+      <div class="container tech-items">
+        <span>Embedded Systems</span>
+        <span>Robotics</span>
+        <span>Neural Networks</span>
+        <span>Biomedical Signals</span>
+        <span>IoT</span>
+      </div>
+    </div>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <div class="eyebrow">About Me</div>
+          <h2>Engineering ideas into <span class="gradient-text">practical solutions.</span></h2>
+
+          <p>
+            I am an Electrical Engineering graduate from the International
+            Islamic University Islamabad, Pakistan. My academic background
+            has introduced me to electronics, programming, embedded systems,
+            signal processing, and engineering analysis.
+          </p>
+
+          <p>
+            My final-year project, EEG-Based Control with IoT Integration
+            for Next-Generation Smart Wheelchairs, explored brain-signal-based
+            control and assistive mobility. My individual work focused on
+            EEG signal filtering, noise reduction, testing, and implementing
+            the machine-learning model.
+          </p>
+
+          <p>
+            I also completed a six-week internship at IESCO's Chaklala
+            132 kV Grid Substation, including two weeks in the Protection
+            and Instrumentation section. <br>In addition, nearly six years of
+            teaching and administrative experience have strengthened my
+            communication, organisation, and problem-solving skills.
+          </p>
+
+          <p>
+            I plan to pursue postgraduate education and research in intelligent
+            engineering systems, with particular interest in embedded AI,
+            neural networks, robotics, biomedical signal processing, and
+            rehabilitation technology.
+          </p>
+        </div>
+
+        <div class="focus-grid reveal">
+          <article class="focus-card">
+            <div class="icon-box">⌘</div>
+            <h3>Embedded Systems</h3>
+            <p>Microcontrollers, sensors, hardware-software integration, and connected devices.</p>
+          </article>
+
+          <article class="focus-card">
+            <div class="icon-box">⚙</div>
+            <h3>Robotics & Control</h3>
+            <p>Intelligent control, sensing, automation, and assistive robotic systems.</p>
+          </article>
+
+          <article class="focus-card">
+            <div class="icon-box">⌁</div>
+            <h3>AI & Neural Networks</h3>
+            <p>Exploring machine learning and neural networks for engineering applications.</p>
+          </article>
+
+          <article class="focus-card">
+            <div class="icon-box">♡</div>
+            <h3>Biomedical Technology</h3>
+            <p>Biomedical signals and technologies supporting mobility and rehabilitation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section research-section" id="research">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Research Interests</div>
+          <h2>Exploring the future of <span class="gradient-text">intelligent engineering.</span></h2>
+          <p>
+            My intended postgraduate research interests connect electrical
+            engineering with artificial intelligence, embedded computing,
+            and human-centred technology.
+          </p>
+        </div>
+
+        <div class="research-grid">
+          <article class="card reveal">
+            <div class="icon-box">⌁</div>
+            <h3>Neural Networks & AI</h3>
+            <p>Neural-network architectures, machine learning, intelligent classification, and AI applications in engineering.</p>
+            <div class="tags">
+              <span class="tag">Neural Networks</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">AI</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon-box">⌘</div>
+            <h3>Embedded AI</h3>
+            <p>Exploring intelligent functions on embedded platforms for responsive, resource-aware applications.</p>
+            <div class="tags">
+              <span class="tag">Embedded Systems</span>
+              <span class="tag">IoT</span>
+              <span class="tag">Edge AI</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon-box">⚙</div>
+            <h3>Robotics & Control</h3>
+            <p>Sensor-based control, human-machine interaction, automation, and assistive robotics.</p>
+            <div class="tags">
+              <span class="tag">Robotics</span>
+              <span class="tag">Control Systems</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon-box">∿</div>
+            <h3>Biomedical Signal Processing</h3>
+            <p>EEG/EMG/ECG acquisition, signal filtering, noise reduction, and physiological signal-based interfaces.</p>
+            <div class="tags">
+              <span class="tag">EEG</span>
+              <span class="tag">EMG</span>
+              <span class="tag">ECG</span>
+              <span class="tag">Signal Processing</span>
+              <span class="tag">BCI</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon-box">♡</div>
+            <h3>Rehabilitation Technology</h3>
+            <p>Engineering technologies that may support mobility, accessibility, independence, and rehabilitation.</p>
+            <div class="tags">
+              <span class="tag">Assistive Technology</span>
+              <span class="tag">Medical Robotics</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon-box">▦</div>
+            <h3>Smart Connected Systems</h3>
+            <p>Exploring how electronics, embedded computing, and connectivity can support monitoring and control.</p>
+            <div class="tags">
+              <span class="tag">IoT</span>
+              <span class="tag">Electronics</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Selected Work</div>
+          <h2>Projects built around <span class="gradient-text">real problems.</span></h2>
+          <p>
+            Academic engineering projects that reflect my interests in
+            biomedical signals, electronics, embedded systems, and programming.
+          </p>
+        </div>
+
+        <article class="featured-project reveal">
+          <div class="project-art">
+            <div class="brain-diagram">
+              <div class="brain-symbol">🧠</div>
+              <div class="diagram-label">EEG Signal Acquisition</div>
+              <div class="signal-line">
+                <svg viewBox="0 0 320 50" preserveAspectRatio="none" aria-hidden="true">
+                  <polyline points="0,25 20,25 30,10 40,40 50,5 60,42 70,25 95,25 110,15 120,35 130,8 140,40 150,25 180,25 190,12 200,38 210,20 220,25 250,25 265,8 275,40 285,25 320,25"/>
+                </svg>
+              </div>
+              <div class="diagram-label">Processing → Classification → Control</div>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <span class="tag">Final-Year Project</span>
+            <h3>EEG-Based Control with IoT Integration for Next-Generation Smart Wheelchairs</h3>
+
+            <p>
+              An academic project exploring hands-free wheelchair control
+              using electroencephalography (EEG) signals, with IoT-enabled
+              monitoring and supporting safety features.
+            </p>
+
+            <div class="project-meta">
+              <div class="meta-card">
+                <span>Project Type</span>
+                <strong>Final-Year Project</strong>
+              </div>
+              <div class="meta-card">
+                <span>Supervisor</span>
+                <strong>Dr. Abdul Basit</strong>
+              </div>
+              <div class="meta-card">
+                <span>Research Area</span>
+                <strong>EEG & Assistive Technology</strong>
+              </div>
+            </div>
+
+            <div class="project-links">
+              <!-- Replace with your actual public GitHub repository URL -->
+              <a class="btn btn-primary" href="https://github.com/wheelchaireeg-fyp/Final-Year-Project"
+                 target="_blank" rel="noopener noreferrer">
+                GitHub Repository ↗
+              </a>
+
+              <!-- Replace # with the actual report link -->
+              <a class="btn btn-secondary" href="FYDP Report.docx">Project Report</a>
+
+              <!-- Replace # with the actual video link -->
+              <a class="btn btn-secondary" href="#project-demo">Demonstration Video</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="project-details reveal">
+          <h3>01. Problem Statement</h3>
+          <p>
+            Conventional wheelchair controls may be challenging for people
+            with severe mobility limitations. This project investigated
+            brain-signal-based interaction as a potential alternative control
+            approach, with the broader aim of supporting accessible mobility.
+          </p>
+
+          <h3>02. Project Objectives</h3>
+          <ul>
+            <li>Explore the acquisition and analysis of EEG signals.</li>
+            <li>Investigate filtering and noise-reduction techniques for EEG data.</li>
+            <li>Develop and test machine-learning-based recognition of selected EEG patterns.</li>
+            <li>Explore translating recognized commands into wheelchair control instructions.</li>
+            <li>Investigate IoT-based monitoring and supporting safety features.</li>
+          </ul>
+
+          <h3>03. System Architecture</h3>
+          <p>
+            The processing pipeline connects EEG acquisition with signal
+            processing, classification, and control. Actual implementation
+            details should reflect the final system you built and tested.
+          </p>
+
+          <div class="architecture">
+            <span>EEG Acquisition</span><b>→</b>
+            <span>Signal Filtering</span><b>→</b>
+            <span>ML Classification</span><b>→</b>
+            <span>Command Generation</span><b>→</b>
+            <span>Wheelchair Control</span>
+          </div>
+
+          <p>
+            IoT monitoring and sensor-based safety functions were additional
+            elements of the project concept.
+          </p>
+
+          <h3>04. My Individual Contribution</h3>
+          <p>
+            My primary contribution focused on the signal-processing and
+            software aspects of the project. I worked on EEG signal filtering,
+            noise reduction, testing, and implementation of the machine-learning
+            model. This experience helped me understand the challenges of
+            preparing biomedical signals for pattern recognition and control.
+          </p>
+
+          <h3>05. Technologies & Tools</h3>
+          <div class="tags">
+            <span class="tag">EEG Signal Processing</span>
+            <span class="tag">Python</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Embedded Systems</span>
+            <span class="tag">IoT</span>
+            <span class="tag">Sensors</span>
+          </div>
+          <p style="margin-top:12px;">
+            Retain only the technologies you actually used in the final project.
+          </p>
+
+          <h3>06. Project Snapshots</h3>
+          <p>
+            Add your actual EEG setup photographs, signal plots, hardware
+            images, and testing screenshots. Store them in the <code>images</code>
+            folder beside this HTML file.
+          </p>
+
+          <div class="project-gallery">
+            <figure class="gallery-item">
+              <img src="Block_diagram.png" alt="EEG data acquisition setup" loading="lazy">
+              <figcaption class="gallery-caption">
+                <strong>EEG Acquisition Setup</strong>
+                <p>Equipment and setup used during EEG signal collection.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+              <img src="sample_predictions.png" alt="EEG signal visualization" loading="lazy">
+              <figcaption class="gallery-caption">
+                <strong>EEG Signal Analysis</strong>
+                <p>Single, Double and Triple Blinks Signal.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+              <img src="images/wheelchair-hardware.jpg" alt="Wheelchair hardware and electronics" loading="lazy">
+              <figcaption class="gallery-caption">
+                <strong>Hardware & Electronics</strong>
+                <p>Actual hardware, controller, sensors, and connections.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+              <img src="confusion_matrix.png" alt="Smart wheelchair project testing" loading="lazy">
+              <figcaption class="gallery-caption">
+                <strong>Testing & Validation</strong>
+                <p>Deep Learning Model Verification</p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <h3>07. Research & Future Development</h3>
+          <ul>
+            <li>Investigate improved EEG classification and neural-network approaches.</li>
+            <li>Explore real-time signal processing and embedded AI deployment.</li>
+            <li>Improve command recognition and evaluate system responsiveness.</li>
+            <li>Explore assistive robotics and rehabilitation technology.</li>
+          </ul>
+
+          <h3>08. Research Context</h3>
+          <p>
+            The project included EEG-related research activities at Shifa
+            International Hospital and PIMS. Add a publication, poster,
+            report, or other public research resource if available and
+            approved for sharing.
+          </p>
+
+          <div class="project-links">
+            <a class="btn btn-primary" href="https://github.com/wheelchaireeg-fyp/Final-Year-Project"
+               target="_blank" rel="noopener noreferrer">
+              View Source Code on GitHub ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="project-grid" style="margin-top:30px;">
+          <article class="project-card reveal">
+            <div class="project-top">🔐</div>
+            <div class="project-body">
+              <h3>Smart Door Lock System</h3>
+              <p>
+                An academic project focused on electronic access control
+                and the integration of hardware components into a
+                security-oriented system.
+              </p>
+              <div class="tags">
+                <span class="tag">Electronics</span>
+                <span class="tag">System Design</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">〰</div>
+            <div class="project-body">
+              <h3>AM Demodulator</h3>
+              <p>
+                An academic communications project focused on recovering
+                the message signal from an amplitude-modulated signal.
+              </p>
+              <div class="tags">
+                <span class="tag">Communications</span>
+                <span class="tag">Electronics</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">💻</div>
+            <div class="project-body">
+              <h3>Web Development Projects</h3>
+              <p>
+                Practical experience with front-end development, JavaScript,
+                and WordPress-based websites. Add links to individual
+                projects when available.
+              </p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">WordPress</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section research-section" id="experience">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Experience</div>
+          <h2>Learning through <span class="gradient-text">practice and responsibility.</span></h2>
+          <p>
+            My experience includes electrical utility exposure and
+            teaching and administrative responsibilities.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-card reveal">
+            <div class="timeline-date">6 Weeks</div>
+            <div>
+              <h3>Electrical Engineering Intern</h3>
+              <h4>IESCO — Chaklala 132 kV Grid Substation</h4>
+              <p>
+                Completed a six-week internship providing exposure to
+                electrical utility operations at a grid substation,
+                including two weeks in the Protection and Instrumentation
+                section.
+              </p>
+              <ul>
+                <li>Observed grid-substation equipment and operational practices.</li>
+                <li>Gained exposure to protection and instrumentation activities.</li>
+                <li>Developed practical awareness of electrical utility systems.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-card reveal">
+            <div class="timeline-date">Nearly 6 Years</div>
+            <div>
+              <h3>Teaching & Administrative Experience</h3>
+              <h4>Educational Institutions</h4>
+              <p>
+                Teaching and administrative responsibilities have helped
+                me develop communication, planning, organisation,
+                leadership, and problem-solving skills alongside my
+                engineering education.
+              </p>
+              <ul>
+                <li>Teaching and explaining academic concepts.</li>
+                <li>Supporting administration, coordination, and daily operations.</li>
+                <li>Working with students, colleagues, and teams.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Technical Toolkit</div>
+          <h2>Skills I bring to <span class="gradient-text">the table.</span></h2>
+          <p>
+            A combination of engineering fundamentals, programming,
+            technical tools, and transferable professional skills.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-group reveal">
+            <h3>Programming & Software</h3>
+            <div class="skill-list">
+              <span class="skill">Python</span>
+              <span class="skill">C++</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">WordPress</span>
+              <span class="skill">MATLAB</span>
+            </div>
+          </article>
+
+          <article class="skill-group reveal">
+            <h3>Electrical & Embedded</h3>
+            <div class="skill-list">
+              <span class="skill">Electronics</span>
+              <span class="skill">Arduino</span>
+              <span class="skill">Sensor Integration</span>
+              <span class="skill">Embedded Systems</span>
+              <span class="skill">Circuit Design</span>
+              <span class="skill">Simulink</span>
+            </div>
+          </article>
+
+          <article class="skill-group reveal">
+            <h3>Signals & Intelligent Systems</h3>
+            <div class="skill-list">
+              <span class="skill">EEG Processing</span>
+              <span class="skill">Noise Filtering</span>
+              <span class="skill">ML Fundamentals</span>
+              <span class="skill">IoT Concepts</span>
+              <span class="skill">Control Systems</span>
+            </div>
+          </article>
+
+          <article class="skill-group reveal">
+            <h3>Tools & Platforms</h3>
+            <div class="skill-list">
+              <span class="skill">VS Code</span>
+              <span class="skill">Arduino IDE</span>
+              <span class="skill">Google Colab</span>
+              <span class="skill">AutoCAD</span>
+              <span class="skill">MATLAB/Simulink</span>
+            </div>
+          </article>
+
+          <article class="skill-group reveal">
+            <h3>Professional Skills</h3>
+            <div class="skill-list">
+              <span class="skill">Communication</span>
+              <span class="skill">Teaching</span>
+              <span class="skill">Administration</span>
+              <span class="skill">Teamwork</span>
+              <span class="skill">Problem Solving</span>
+              <span class="skill">Self-Learning</span>
+            </div>
+          </article>
+
+          <article class="skill-group reveal">
+            <h3>Research Learning Goals</h3>
+            <div class="skill-list">
+              <span class="skill">Deep Learning</span>
+              <span class="skill">Neural Networks</span>
+              <span class="skill">Embedded AI</span>
+              <span class="skill">Robotics</span>
+              <span class="skill">Biomedical Engineering</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section research-section" id="education">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Education & Development</div>
+          <h2>My academic <span class="gradient-text">foundation.</span></h2>
+        </div>
+
+        <div class="education-grid">
+          <article class="education-card reveal">
+            <span class="year">Degree Completed</span>
+            <h3>Bachelor of Science in Electrical Engineering</h3>
+            <p>International Islamic University Islamabad (IIUI), Pakistan</p>
+            <p style="margin-top:12px;">CGPA: 3.37 / 4.00</p>
+            <div class="tags">
+              <span class="tag">Electrical Engineering</span>
+              <span class="tag">Embedded Systems</span>
+              <span class="tag">Electronics</span>
+            </div>
+          </article>
+
+          <article class="education-card reveal">
+            <span class="year">Professional Development</span>
+            <h3>Online Courses & Certificates</h3>
+            <p>
+              DigiSkills courses in Graphic Designing, Digital Marketing,
+              and AutoCAD.
+            </p>
+            <p style="margin-top:12px;">
+              These courses supported my broader interest in digital tools,
+              design, and continuous learning.
+            </p>
+            <div class="tags">
+              <span class="tag">Graphic Designing</span>
+              <span class="tag">Digital Marketing</span>
+              <span class="tag">AutoCAD</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-wrap">
+        <div class="contact-copy reveal">
+          <div class="eyebrow">Let's Connect</div>
+          <h2>Open to learning, collaboration, and <span class="gradient-text">research opportunities.</span></h2>
+          <p>
+            I welcome opportunities related to postgraduate study, research,
+            embedded systems, robotics, biomedical technology, and relevant
+            engineering roles. I am particularly interested in connecting
+            with researchers and teams working on intelligent and
+            assistive technologies.
+          </p>
+
+          <div class="contact-item">
+            <div class="icon-box">✉</div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:zakiurrehman.bsee1112@iiu.edu.pk">
+                zakiurrehman.bsee1112@iiu.edu.pk
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon-box">in</div>
+            <div>
+              <strong>LinkedIn</strong>
+              <a href="https://www.linkedin.com/in/engr-zaki-ur-rehman"
+                 target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/engr-zaki-ur-rehman
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon-box">⌖</div>
+            <div>
+              <strong>Location</strong>
+              <span>Islamabad / Rawalpindi, Pakistan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card reveal">
+          <h3>Have an opportunity in mind?</h3>
+          <p>
+            Feel free to contact me about Master's opportunities,
+            scholarships, research collaboration, internships, or
+            engineering roles related to my interests.
+          </p>
+
+          <a class="btn btn-primary"
+             href="mailto:zakiurrehman.bsee1112@iiu.edu.pk?subject=Academic%20or%20Professional%20Opportunity">
+            Send Me an Email ↗
+          </a>
+
+          <div class="tags">
+            <span class="tag">Master's Applications & Scholarships</span>
+            <span class="tag">Research</span>
+            <span class="tag">Embedded Systems</span>
+            <span class="tag">Robotics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Zaki Ur Rehman. Built with curiosity and purpose.</p>
+      <a class="back-top" href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    // Close mobile navigation after clicking a link
+    document.querySelectorAll("#navLinks a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Automatic copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Reveal elements as they enter the viewport
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12
+      });
+
+      revealElements.forEach(element => observer.observe(element));
+    } else {
+      revealElements.forEach(element => element.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
